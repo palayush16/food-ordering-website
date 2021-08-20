@@ -9,14 +9,17 @@ const app = express();
 app.use(express.json());
 
 
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "client/build/index.html"), err => {
-        if (err) {
-            res.status(500).send(err);
-        }
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static("client/build"));
+    app.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname, "client/build/index.html"), err => {
+            if (err) {
+                res.status(500).send(err);
+            }
+        });
     });
-});
+    
+}
 
 
 app.get('/items3', (req, res) => {
@@ -93,11 +96,9 @@ mongoose.connect(process.env.DB_CONNECTION_STRING, {
 
 const PORT =process.env.PORT || 5000;
 
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static("client/build"));
-}
+
 
 app.listen(PORT,()=>{
     console.log(`Listening to ${PORT}`);
-    console.log(__dirname);
+    
 });
