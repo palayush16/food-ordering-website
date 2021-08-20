@@ -11,7 +11,11 @@ app.use(express.json());
 
 
 app.get('/', (req, res) => {
-    res.send("<h2>First Request !</h2>");
+    res.sendFile(path.join(__dirname, "build/index.html"), err => {
+        if (err) {
+            res.status(500).send(err);
+        }
+    });
 });
 
 
