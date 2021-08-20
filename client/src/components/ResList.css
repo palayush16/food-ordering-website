@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contain{
+    width:100%;
+    box-sizing: border-box;
+    justify-items:center;
+    
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #2b2b2b 74%);
+    white-space: normal;
+    text-align: center;
+    padding:70px 0 0 0;
+}
+.contain h1{
+    font-size:300%;
+    font-family: monospace;
+    font-weight:200px;
+    color:#fff;
+
+}
+
+
+.containero{
+    position: relative;
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 100%;
+    justify-items:center;
+    padding:6% 0 0 0;
+    white-space: normal;
+} 
+.containero .cardo{
+    
+    position: relative ;
+    max-width: 350px;
+    height:260px;
+    color: #000;
+    white-space: normal;
+    background: url("../images/bgSpecials.jpg");
+    margin-bottom:220px;
+    padding: 20px 20px;   
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition:0.5s ease-in-out;
+}
+.container .cardo:hover{
+    height:420px;
+}
+.containero .cardo .imgBx{
+    position: relative;
+    width:260px;
+    height:260px;
+    top:-60px;
+    
+    z-index:9;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.image{
+    max-width: 100%;
+    border-radius: 40%;
+}
+.containero .cardo .contento
+{
+position: relative;
+margin-top: -140px;
+padding: 10px 15px;
+text-align: center;
+border:solid 2px rgb(0, 0, 0);
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+visibility: hidden;
+opacity: 0;
+transition: 0.5s ease-in-out;
+}
+.containero .cardo:hover .contento
+{
+visibility: visible;
+opacity: 1;
+margin-top: -50px;
+transition-delay: 0.5s;
+padding: 10px 15px;
+z-index: 10;
+}
+.containero .cardo .contento button{
+    padding:8px 16px;
+    margin:2px;
+    background-color:rgb(192, 0, 0);
+    color:#fff;
+}
+.containero .cardo:hover .imgBx{
+    transform: scale(0.8);
+    transition: 0.5s;
+    z-index: 4;
+}
+
+/* @media (max-width: 1200px) {
+    .containero{
+        
+        grid-template-columns: repeat(, 1fr);
+        
+    }
+} */
+
+@media (max-width: 910px) {
+    .containero{
+        
+        display:flex;
+        flex-direction:column;
+        
+        align-items: center;
+        
+        
+    }
+    .contain h1{
+        margin-bottom: 70px;
+    }
+    .contain{
+        justify-content: center;
+        align-items: center;
+    }
+
+}
