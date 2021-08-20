@@ -11,7 +11,7 @@ app.use(express.json());
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "build/index.html"), err => {
+    res.sendFile(path.join(__dirname, "client/build/index.html"), err => {
         if (err) {
             res.status(500).send(err);
         }
@@ -99,4 +99,5 @@ if(process.env.NODE_ENV === 'production') {
 
 app.listen(PORT,()=>{
     console.log(`Listening to ${PORT}`);
+    console.log(__dirname);
 });
