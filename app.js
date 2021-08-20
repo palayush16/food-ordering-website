@@ -94,5 +94,5 @@ if(process.env.NODE_ENV === 'production') {
 }
 
 app.listen(PORT,()=>{
-    console.log("Listening to 3000");
+    console.log(`Listening to ${PORT}`);
 });
